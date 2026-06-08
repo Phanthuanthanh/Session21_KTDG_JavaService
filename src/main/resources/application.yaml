@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: base_spring_boot
+  datasource:
+    url: jdbc:mysql://localhost:3307/base_core?createDatabaseIfNotExist=true
+    username: root
+    password: 270606
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+app:
+  jwt:
+    secret: daylachuoimahoabimatrikkei0987654321dacbietracroi
+    access-token-duration: 86400000 # 1 day
+    refresh-token-duration: 604800000 # 7 days
