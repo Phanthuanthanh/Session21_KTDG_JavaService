@@ -2,9 +2,10 @@ spring:
   application:
     name: base_spring_boot
   datasource:
-    url: jdbc:mysql://localhost:3307/base_core?createDatabaseIfNotExist=true
-    username: root
-    password: 270606
+    url: jdbc:h2:mem:base_core;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
   jpa:
     hibernate:
       naming:
@@ -15,10 +16,10 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
-        dialect: org.hibernate.dialect.MySQLDialect
+        dialect: org.hibernate.dialect.H2Dialect
 
 app:
   jwt:
     secret: daylachuoimahoabimatrikkei0987654321dacbietracroi
-    access-token-duration: 86400000 # 1 day
-    refresh-token-duration: 604800000 # 7 days
+    access-token-duration: 86400000
+    refresh-token-duration: 604800000
